@@ -8,7 +8,7 @@
     "start": "parcel",
     "build": "parcel build",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --cname mecra.tech --nojekyll true"
   },
   "repository": {
     "type": "git",
