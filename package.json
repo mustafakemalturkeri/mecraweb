@@ -6,20 +6,23 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cobiwave/simplefolio"
+    "url": "git+https://github.com/mustafakemalturkeri/mecraweb"
   },
   "keywords": [],
   "author": "Jacobo Martinez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cobiwave/simplefolio/issues"
+    "url": "https://github.com/mustafakemalturkeri/issues"
   },
-  "homepage": "https://github.com/cobiwave/simplefolio#readme",
+  "homepage": "https://mustafakemalturkeri.github.io/mecraweb",
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "@parcel/transformer-sass": "^2.10.3",
     "parcel": "^2.8.2",
     "prettier": "^2.8.1"
