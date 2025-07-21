@@ -1,0 +1,22 @@
+# Word documents
+*.docx
+*.doc
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cache files
+node_modules/
+.cache/

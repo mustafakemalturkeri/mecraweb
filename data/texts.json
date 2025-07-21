@@ -1,0 +1,383 @@
+{
+  "site": {
+    "title": "Mecra Su ve Çevre Teknolojileri ARGE A.Ş.",
+    "description": "Mecra Water and Environment Technologies R&D Company - Leading solutions in water management, environmental engineering, and innovative technologies",
+    "keywords": "water management, environmental engineering, R&D, technology, sustainable solutions"
+  },
+  "navigation": {
+    "brand": "Mecra",
+    "items": [
+      {
+        "href": "#home",
+        "text": "Ana Sayfa"
+      },
+      {
+        "href": "#team",
+        "text": "Biz Kimiz?"
+      },
+      {
+        "href": "#services",
+        "text": "Hizmetlerimiz"
+      },
+      {
+        "href": "#projects",
+        "text": "Deneyimimiz"
+      },
+      {
+        "href": "#patents",
+        "text": "Patentlerimiz"
+      },
+      {
+        "href": "#why-mecra",
+        "text": "Neden Mecra?"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Su ve çevre teknolojilerinin geleceğini",
+    "titleHighlight": "yeniden tanımlıyoruz.",
+    "subtitle": "Geleceği bizimle keşfedin!",
+    "button1": "BAŞLAYALIM...",
+    "button2": "BİZE ULAŞIN",
+    "description": "Mecra, <b>bütünleşik su kaynakları yönetimi, iklim </b><b>değişikliği analizleri</b><b> ve ileri çevresel modelleme</b> alanlarında ön saflarda çalışan araştırma odaklı bir mühendislik ve danışmanlık şirketidir. Ankara merkezli olup ulusal ve uluslararası projelerde aktif olarak yer alan Mecra, karmaşık su ve çevre sorunlarına <b>veri odaklı, simülasyon tabanlı çözümler</b> sunar.",
+    "logoText": "Su ve Çevre Teknolojileri",
+    "logoSubtext": "Yenilikçi Çözümler"
+  },
+  "about": {
+    "title": "Biz Kimiz?",
+    "subtitle": "Mecra Su ve Çevre Teknolojileri ARGE A.Ş.",
+    "description": "<b>geleneksel mühendisliğin ötesinde</b>",
+    "extendedDescription": "Mecra, geleneksel danışmanlığın ötesine geçerek kamu kurumlarına, hibe destekli programlara ve su sektöründe faaliyet gösteren teknik danışmanlık firmalarına <b>derinlemesine analitik, modele dayalı hizmetler</b> sunma hedefiyle doğmuştur. Müşterilerimizin <b>uyum, dirençlilik ve uzun vadeli sürdürülebilirlik</b> sağlamalarına destek olmak için <b>hesaplamalı hidroloji, iklim bilimi, çevresel modelleme ve ileri analitik</b> alanlarını entegre ediyoruz.<br><br>Tüm su döngüsü boyunca faaliyet gösteriyoruz— <b>hidrolojik ve hidrolik modelleme, iklim değişikliği etki</b> <b>değerlendirmesi, kirletici taşınımı ve akıbeti değerlendirmesi</b>, <b>stratejik planlama araçları ve karar destek sistemleri</b> geliştirilmesi, <b>atık su sistemlerinin optimizasyonu</b> ve <b>ekolojik risk değerlendirmesine</b> kadar geniş bir yelpazede mühendislik çözümleri sunuyoruz.<br><br><b>Kurumlar, kamu hizmet kuruluşları ve mühendislik ekiplerinin</b> daha bilinçli, geleceğe hazır kararlar alabilmesi için <b>sağlam modelleme çıktıları, veri odaklı öneriler ve politika uyumlu stratejiler</b> sunuyoruz. <b>AB Su Çerçeve </b><b>Direktifi</b> , <b>Sürdürülebilir Kalkınma Amaçları</b> ve ulusal su öncelikleri gibi temel politika çerçeveleriyle uyumlu planlama araçları ve yönetim çözümlerinin tasarımı ve uygulanmasında geniş deneyime sahibiz.<br><br>Mecra aynı zamanda kurumsal iş akışlarına ve planlama ortamlarına özel <b>kendine ait analitik araçlar</b> ve <b>simülasyon platformları</b> geliştirmektedir. Bu araçlar hem stratejik hem de operasyonel düzeyde şeffaf ve kanıta dayalı karar vermeyi destekler.<br><br>Bize göre <b>iklim değişikliği, su kıtlığı ve çevresel bozulma</b> artık geleceğin riskleri değil, <b>bugünün tasarım koşullarıdır.</b> Mecra, bu zorlukları <b>daha akıllı, adil ve sürdürülebilir su sistemleri</b> için fırsatlara dönüştürmeye kararlıdır.",
+    "visionTitle": "<br>Vizyonumuz",
+    "vision": "<b>Vizyonumuz, günümüzün en karmaşık su ve çevre sorunlarına, bilimsel temelli ve amaca yönelik, yüksek hassasiyete sahip mühendislik çözümleri sunarak mühendislik alanında çıtayı yükseltmektir.</b><br><br>Gelecekte, <b>mühendisliğin yalnızca teknik açıdan titiz değil, aynı zamanda şeffaf, tekrarlanabilir ve çevresel ile toplumsal ihtiyaçlarla uyumlu</b> olmasını hayal ediyoruz. Mecra olarak, <b>mühendisliği en yüksek standartlara taşımaya kararlıyız.</b>",
+    "missionTitle": "<br>Misyonumuz",
+    "mission": "<b>Misyonumuz, kurumlar, danışmanlık firmaları ve kamu kuruluşlarının suyla ilgili daha akıllı ve sürdürülebilir kararlar alabilmeleri için ihtiyaç duydukları modeller, araçlar ve içgörülerle donatmaktır.</b><br><br>Bunu şu yollarla başarıyoruz:<br>💧 En güncel bilimsel ve mühendislik bilgisini uygulamak<br>💧 Gerçek dünya sorunları için özel simülasyon çerçeveleri geliştirmek<br>💧 Politika ve planlamayı destekleyecek pratik ve şeffaf araçlar geliştirmek<br>💧 Teknik derinlikten ödün vermeden, karmaşıklığı netliğe dönüştürmek<br>💧 Her oluşturduğumuz modelde, şekillendirdiğimiz her stratejide ve teslim ettiğimiz her projede <b>kesinlik, titizlik</b> ve <b>dürüstlüğü</b> ön planda tutmaya kararlıyız.",
+    "valuesTitle": "<br>Değerlerimiz",
+    "values": [
+      {
+        "icon": "fas fa-crosshairs",
+        "title": "Kesinlik"
+      },
+      {
+        "icon": "fas fa-microscope",
+        "title": "Titizlik"
+      },
+      {
+        "icon": "fa-solid fa-shield-alt",
+        "title": "Dürüstlük"
+      }
+    ]
+  },
+  "services": {
+    "title": "Hizmetlerimiz ve Uzmanlık Alanlarımız",
+    "subtitle": "Mecra, su döngüsünün tamamında uzmanlaşmış mühendislik ve araştırma hizmetleri sunar. Çalışmalarımız, <b>bilimsel modelleme, teknik planlama</b> ve <b>dijital inovasyonu</b> harmanlayarak su yönetimi ve çevresel koruma alanlarında daha iyi kararların alınmasına destek olur.<br><br>Şu alanlara odaklanıyoruz:",
+    "items": [
+      {
+        "icon": "fas fa-project-diagram",
+        "title": "Entegre Su Kaynakları Yönetimi (IWRM)",
+        "description": "Su otoritelerine, planlamacılara ve danışmanlık kuruluşlarına <b>dengeli, verimli ve çevreye duyarlı su yönetimi stratejileri</b> geliştirmelerinde yardımcı oluyoruz. Yaklaşımımız, <b>hidrolojik bilimi, paydaş gereksinimlerini</b> ve <b>düzenleyici çerçeveleri</b> bütünleştirerek uzun vadeli su güvenliği ve iklim dirençliliğini sağlamak üzerine kuruludur.<br><br>IWRM hizmetlerimiz şunları içerir:<br><br>Havza ölçeğinde su dengesi ve tahsis modellemesi: Yüzey–yeraltı suyu etkileşimleri, sektörel talepler ve iklim değişkenliğini dikkate alarak, suyun mekânsal ve zamansal olarak miktarının hesaplanması.<br><br>Nehir Havzası Yönetim Planları (NHYP) için teknik destek: Havza karakterizasyonu, baskı-etki analizi, çevresel hedeflerin belirlenmesi ve tedbir programı geliştirilmesi.<br><br>Sektörel Su Tahsis Planlarının geliştirilmesi: Tarım, sanayi, belediyeler ve ekosistemler için adil ve uyarlanabilir tahsis stratejilerinin tasarlanması — gelecekteki iklim ve talep senaryolarını içerir.<br><br>Rekabet halindeki su talepleri ve ekolojik akımların değerlendirilmesi: Sektörel su kullanımları ile çevresel koruma arasındaki dengelerin değerlendirilmesi, çevresel akış değerlendirmeleri ve kıtlık durumunda kullanım önceliklerinin belirlenmesi.",
+        "backgroundImage": "assets/img/services-1.png"
+      },
+      {
+        "icon": "fas fa-globe-americas",
+        "title": "İklim Değişikliği Etkisi & Uyum",
+        "description": "Kurumların, kamu hizmeti kuruluşlarının ve teknik ekiplerin <b>iklim değişikliğinin</b> <b>su mevcudiyeti, sistem güvenilirliği ve risk maruziyeti</b> üzerindeki etkilerini anlamalarına ve buna nasıl hazırlanacaklarına destek oluyoruz. Çalışmalarımız, iklim verilerini <b>pratik, sahaya özgü içgörülere</b> dönüştürerek uygulanabilir uyum stratejilerini destekler.<br><br>İklim Değişikliği hizmetlerimiz şunları içerir:<br><br>Küresel ve bölgesel iklim modeli çıktılarının ölçeklendirilmesi ve yorumlanması: CMIP ve RCM veri setleri kullanılarak havza düzeyinde sıcaklık, yağış ve hidrolojik değişim projeksiyonlarının oluşturulması.<br><br>Kuraklık risk değerlendirmesi ve kırılganlık haritalaması: Hidrolojik modelleme ve maruz kalma ile uyum kapasitesinin mekânsal analizi yoluyla iklim hassasiyeti yüksek sektörlerin, bölgelerin ve toplulukların belirlenmesi.<br><br>Kuraklık yönetimi ve uyum planlarının hazırlanması: Kurumsal ve düzenleyici çerçevelerle uyumlu, uygulanabilir kısa ve uzun vadeli hazırlık, azaltım ve müdahale stratejilerinin tasarlanması.<br><br>İklim senaryolarının karar destek sistemlerine entegrasyonu: Gelecek projeksiyonlarının modeller ve planlama araçlarına entegre edilerek iklim belirsizliği altında esnek ve ileriye dönük su yönetimi desteğinin sağlanması.",
+        "backgroundImage": "assets/img/services-2.png"
+      },
+      {
+        "icon": "fas fa-chart-area",
+        "title": "Hidrolojik ve Hidrolik Modelleme",
+        "description": "Yüksek çözünürlüklü, iklim odaklı hidrolojik ve hidrolik modeller geliştiriyoruz; bu sayede suyun havzalarda, nehirlerde ve altyapı sistemlerinde nasıl davrandığını simüle ediyoruz. Modelleme hizmetlerimiz, özellikle düşük akışlar, kuraklık riski ve aşırı olaylar üzerinde durarak iklim değişikliğinin getirdiği artan karmaşıklık ve belirsizliklerle başa çıkmak için özelleştirilmiştir.<br><br>Çözümlerimiz, hem doğal hem de yapay ortamlarda <b>sağlam tasarım, bilinçli operasyonel kararlar</b> ve <b>uzun vadeli planlama</b> desteği sunar.<br><br>Hidrolojik ve hidrolik modelleme hizmetlerimiz şunları içerir:<br><br>Yağış-akış ve havza ölçeğinde hidroloji modellemesi: Su dengesi analizi, tahsis planlaması ve nehir havzası yönetimini desteklemek için mevcut ve öngörülen koşullar altında akım rejimlerinin simülasyonu.<br><br>Düşük akış, kuraklık ve hidrolojik stres değerlendirmeleri: Mevsimsel su kıtlığı, minimum akış eşikleri ve çoklu iklim senaryoları altında kırılganlığın değerlendirilmesi—kuraklık planlaması ve erken uyarı sistemlerini destekler.<br><br>Aşırı iklim koşullarında taşkın ve rezervuar simülasyonu: Taşkın pikleri, rezervuar giriş/çıkışları ve kontrollü boşaltımların modellenmesiyle değişen hidrolojik rejimler altında sistem performansının değerlendirilmesi.<br><br>Nehir hidrolikleri: Açık kanal hidrolik simülasyonlarıyla altyapı boyutlandırma, sediment taşınımı çalışmaları ve taşkın ovası haritalama desteği.<br><br>Nehirler ve yapılar için Hesaplamalı Akışkanlar Dinamiği (CFD) modellemesi: Kritik yapılar (girişler, balık geçitleri, menfezler, savaklar gibi) etrafında yüksek çözünürlüklü simülasyonların gerçekleştirilmesi — geleneksel yöntemlerin ötesinde hassas hidrolik tasarım ve performans değerlendirmesine olanak sağlar.",
+        "backgroundImage": "assets/img/services-3.png"
+      },
+      {
+        "icon": "fas fa-flask",
+        "title": "Kirletici Akıbeti & Su Kalitesi Modelleme",
+        "description": "Kirleticilerin yüzey suyu sistemlerine nasıl girdiğini, hareket ettiğini ve dönüştüğünü simüle eden <b>mekanistik ve mekânsal olarak dağıtılmış modeller</b> geliştiriyoruz. Çalışmalarımız <b>düzenleyici uyum, ekolojik koruma ve maliyet etkin yatırım planlaması</b> sağlar.<br><br>Müşterilerimizin hem noktasal hem de yayılı kirleticilerin <b>kaynaklarını, yollarını ve etkilerini</b> anlamalarına yardımcı oluyor, böylece etkili ve hedefe yönelik önlemler için sağlam bir teknik temel sağlıyoruz.<br><br>Su Kalitesi hizmetlerimiz şunları içerir:<br><br>Noktasal ve yayılı kirletici yüklerinin nicelenmesi: Kentsel, endüstriyel, tarımsal ve diğer insan kaynaklı kaynaklardan gelen kirletici katkılarının saha verileri ve CBS ile entegre modelleme araçlarıyla belirlenmesi ve haritalanması.<br><br>Kirleticinin akıbeti, bozunumu ve taşınımının simülasyonu: Akarsu, baraj ve sulak alanlarda seyrelme, dağılım, dönüşüm ve birikim gibi ana süreçlerin dinamik akım koşulları altında modellenmesi.<br><br>Çevresel standartlara uyum değerlendirmesi: Simüle edilen konsantrasyonların Çevresel Kalite Standartları (EQS), deşarj izinleri ve AB Su Çerçeve Direktifi (WFD) gibi çerçevelerle ilişkilendirilmesi.<br><br>Kirlilik kontrol stratejilerinin geliştirilmesi için teknik destek: Senaryoya dayalı modelleme, baskı–etki ilişkilerinin haritalanması ve maliyet–fayda ya da maliyet-etkinlik analizleriyle etkin önlemlerin oluşturulması.",
+        "backgroundImage": "assets/img/services-4.png"
+      },
+      {
+        "icon": "fas fa-brain",
+        "title": "Karar Destek Sistemleri & Analitik Araçlar",
+        "description": "Amaca uygun dijital araçlar tasarlıyor ve geliştiriyoruz; bunlar, karmaşık modelleme sonuçlarını erişilebilir ve uygulanabilir içgörülere dönüştürüyor. Platformlarımız, şeffaflık, tekrarlanabilirlik ve kurumsal kullanılabilirlik ön planda tutularak <b>senaryo analizi, stratejik planlama</b> ve <b>düzenleyici uyum</b> için inşa edilmektedir.<br><br>Karar destek sistemi hizmetlerimiz şunları içerir:<br><br>Özelleştirilmiş, CBS entegreli simülasyon araçları: Mekânsal verileri hidrolik, hidrolojik veya kirletici modellerle birleştirerek havza ölçeğinde değerlendirme ve entegre planlama iş akışları sağlamak.<br><br>Senaryo analizi ve baskı haritalama için etkileşimli arayüzler: Kuraklık, iklim değişkenliği, arazi kullanımı değişikliği ve politika seçeneklerinin su mevcudiyeti ve kalitesi üzerindeki etkilerini kullanıcıların keşfetmesini sağlamak.<br><br>Otomatik modelleme ve raporlama platformları: Kurumsal yapılara, veri standartlarına ve iş akışı gereksinimlerine uygun, kullanıcı dostu sistemlerle model çıktıları, haritalar ve teknik raporlar üretmek.",
+        "backgroundImage": "assets/img/services-5.png"
+      },
+      {
+        "icon": "fas fa-industry",
+        "title": "Atıksu Sistem Diagnostiği & Proses Mühendisliği",
+        "description": "<b>Atıksu arıtma tesisleri</b> için gelişmiş tanı ve tasarım desteği sağlıyor, <b>proses mühendisliğini</b> yüksek çözünürlüklü <b>simülasyonlarla</b> birleştirerek tesis performansını artırıyor, enerji tüketimini azaltıyor ve kalıcı operasyonel sorunlara çözüm getiriyoruz.<br><br>Uzmanlığımız, <b>hesaplamalı modelleme, süreç optimizasyonu</b> ve <b>uygulamalı inovasyon</b> arasındaki köprüyü kurarak, hizmet verdiğimiz kamu hizmetleri ve tasarım ekiplerini <b>daha verimli ve dirençli sistemler</b> geliştirmede destekliyor.<br><br>Hizmetlerimiz şunları içerir:<br><br>Yüksek hassasiyetli CFD kullanarak reaktör hidroliklerinin tanı ve sorun giderimi: Arıtma birimlerindeki akış desenlerini, kısa devre ve ölü bölgeleri analiz etmek için geçici, çok fazlı hesaplamalı akışkanlar dinamiği uygulayarak; geleneksel tasarım modellerinin sıklıkla gözden kaçırdığı karmaşık hidrolik davranışları ortaya çıkarıyoruz.<br><br>Arıtma birimlerinin yeniden tasarımı ve modernizasyonu: Simülasyonla belirlenen tanılara dayalı olarak giriş üniteleri, akış dağıtım sistemleri, havalandırma bölgeleri ve çamur yönetim bileşenlerinin iyileştirilmesi.<br><br>Performans optimizasyonu ve enerji tüketiminin azaltılması: Sıklıkla büyük ölçekli sermaye yatırımı gerektirmeden, proses kararlılığının, arıtma verimliliğinin ve enerji kullanımının iyileştirilmesi.<br><br>Yeni ve tescilli arıtma teknolojilerinin geliştirilmesi: Arıtma tesislerindeki belirli ünite operasyonları için özel çözümlerin Ar-Ge'si, prototiplenmesi ve uygulanmasına destek veriyoruz.",
+        "backgroundImage": "assets/img/services-6.png"
+      }
+    ],
+    "advantagesTitle": "Neden Mecra?",
+    "advantages": [
+      {
+        "icon": "fas fa-award",
+        "title": "Uzman Ekip",
+        "description": "Alanında uzman mühendis ve bilim insanlarından oluşan ekip"
+      },
+      {
+        "icon": "fas fa-rocket",
+        "title": "Yenilikçi Yaklaşım",
+        "description": "Teknolojik yenilikler ve modern metodolojiler"
+      },
+      {
+        "icon": "fas fa-clock",
+        "title": "Hızlı Çözüm",
+        "description": "Proje sürelerinde hızlı ve kaliteli çözümler"
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "Güvenilir Partner",
+        "description": "Uzun vadeli ortaklıklar ve güvenilir hizmet"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Deneyimimiz",
+    "subtitle": "Gerçekleştirdiğimiz başarılı proje örnekleri ve anahtar referanslarımız",
+    "flagshipProjects": {
+      "title": "Öne Çıkan Projeler",
+      "subtitle": "Mecra olarak yürütmekte olduğumuz amiral gemisi projelerimiz",
+      "items": [
+        {
+          "title": "Altı Havza Nehir Havzası Yönetim Planları",
+          "description": "AB Su Çerçeve Direktifi uyumlu kapsamlı havza yönetim planları",
+          "backgroundImage": "assets/img/flagship-1.png",
+          "icon": "fas fa-water",
+          "details": "6RBMP Projesi, Avrupa Birliği dışında şimdiye kadar uygulanan en büyük AB uyumlu su yönetimi girişimidir. Altı büyük havzayı ve Türkiye topraklarının yaklaşık %40'ını kapsayan bu proje, AB Su Çerçeve Direktifi (WFD) ile uyumlu kapsamlı Havza Yönetim Planları (RBMP), Sektörel Su Tahsis Planları (SWAP) ve Çevresel Kalite Standartlarının (EQS) sağlanmasının çevresel ve sağlık etkileriyle ilgili bir vaka çalışması oluşturmayı amaçlamıştır."
+        },
+        {
+          "title": "Su Kalitesi Ekobölgeler Değerlendirme Sistemi",
+          "description": "Türkiye'nin ekolojik su kalitesi değerlendirme sisteminin AB uyumlu geliştirilmesi",
+          "backgroundImage": "assets/img/flagship-2.png",
+          "icon": "fas fa-leaf",
+          "details": "Mecra, Türkiye'nin ekolojik su kalitesi değerlendirme sistemini AB Su Çerçeve Direktifi (WFD) ve Çevresel Kalite Standartları (EQS) Direktifi ile uyumlu hale getirmeyi hedefleyen bu amiral gemisi AB destekli projenin ödüllü teknik teklifinin hazırlanmasına katkı sunmuştur."
+        }
+      ]
+    },
+    "keyReferences": {
+      "title": "Anahtar Referanslar",
+      "subtitle": "Kurucu ekibimizin Mecra öncesi dönemde gerçekleştirdiği kritik projeler",
+      "items": [
+        {
+          "title": "İstanbul İçmesuyu ve Atıksu Master Planı",
+          "description": "Avrupa'nın en büyük metropolü için iklim dirençli su master planı",
+          "backgroundImage": "assets/img/reference-1.png",
+          "icon": "fas fa-city",
+          "details": "İSKİ tarafından yürütülen İstanbul İçmesuyu ve Atıksu Master Planı, iklim direnci, kuraklıkla mücadele ve sürdürülebilir su kullanımını uzun vadeli yatırım çerçevelerine entegre ederek su, atık su ve yağmur suyu hizmetlerini geleceğe hazırlamayı amaçlayan stratejik, kent çapında bir planlama çalışmasıdır."
+        },
+        {
+          "title": "Kurram Tangi Entegre Su Kaynakları Projesi",
+          "description": "Pakistan'da 65 MW hidroelektrik ve 140.000 ha sulama projesi",
+          "backgroundImage": "assets/img/reference-2.png",
+          "icon": "fas fa-bolt",
+          "details": "Kurram Tangi Projesi, Pakistan'ın Khyber Pakhtunkhwa bölgesinde su güvenliği, gıda üretimi ve yenilenebilir enerji üretimini artırmaya yönelik önemli bir girişimdir. Planlanan altyapı, 65 MW hidroelektrik kapasitesine sahip 100 metre yüksekliğinde bir baraj ve 140.000 hektarlık bir sulama alanını kapsamaktadır."
+        },
+        {
+          "title": "Kahramanmaraş İli Entegre Kentsel Su Yönetimi",
+          "description": "Dünya Bankası finansmanlı iklim dirençli kentsel su yönetimi planı",
+          "backgroundImage": "assets/img/reference-3.png",
+          "icon": "fas fa-shield-alt",
+          "details": "Dünya Bankası tarafından finanse edilen bu girişim, hızla büyüyen Kahramanmaraş ili için iklim değişikliğine dayanıklı ve sürdürülebilir bir kentsel su yönetimi çerçevesi oluşturmayı amaçlamıştır."
+        },
+        {
+          "title": "Kızılırmak Havzası Kuraklık Yönetim Planı",
+          "description": "Türkiye'nin en uzun nehri için kapsamlı kuraklık yönetim stratejisi",
+          "backgroundImage": "assets/img/reference-4.png",
+          "icon": "fas fa-sun",
+          "details": "Kızılırmak Nehri Havzası, Türkiye'nin en uzun ve ekonomik açıdan en önemli havzalarından biri olarak, kapsamlı bir Kuraklık Yönetim Planı geliştirilmesine odaklanan stratejik bir planlama girişiminin merkezinde yer aldı."
+        },
+        {
+          "title": "3 Pilot Havza Ekonomik Analiz ve Su Verimliliği",
+          "description": "AB destekli pilot havzalarda ekonomik analiz ve su verimliliği projesi",
+          "backgroundImage": "assets/img/reference-5.png",
+          "icon": "fas fa-chart-line",
+          "details": "Bu dönüm noktası niteliğindeki AB destekli proje, Türkiye'nin AB Su Çerçeve Direktifi'ne (SÇD) ulusal uyumunu güçlendirmeyi amaçlamış; Akarçay, Batı Akdeniz ve Yeşilırmak olmak üzere üç pilot havzada Nehir Havzası Yönetim Planlarının (NHYP) hazırlanması ile ekonomik analizler ve su verimliliği stratejilerinin entegre edilmesini hedeflemiştir."
+        },
+        {
+          "title": "Almus & Köklüce HES Finansör Danışmanlığı",
+          "description": "Hidroelektrik santralleri için iklim dirençliliği değerlendirmesi",
+          "backgroundImage": "assets/img/reference-6.png",
+          "icon": "fas fa-water",
+          "details": "Finansörler tarafından yürütülen inceleme kapsamında, kurucu ortaklarımız Sayın Köken ve Sayın Türkeri, Türkiye'deki iki hidroelektrik santralin—Almus HES (27 MW) ve Köklüce HES (90 MW)—uzun vadeli operasyonel sürdürülebilirliği ve iklim dirençliliğinin değerlendirilmesi için görevlendirilmiştir."
+        },
+        {
+          "title": "Menzelet & Kılavuzlu HES İşveren Danışmanlığı",
+          "description": "1980'lerden kalma HES'lerin iklim uyum değerlendirmesi",
+          "backgroundImage": "assets/img/reference-7.png",
+          "icon": "fas fa-industry",
+          "details": "Menzelet (124 MW) ve Kılavuzlu (54 MW), 1980'lerin başında devreye alınan ve 2016'da özel işletmeye devredilen iki hidroelektrik santralidir. Bu danışmanlık hizmeti; değişen iklimsel ve hidrolojik koşullar altında uzun vadeli operasyonel risklerin değerlendirilmesine odaklanmıştır."
+        },
+        {
+          "title": "Antalya ve Burdur Havzaları Kuraklık Yönetimi",
+          "description": "İki farklı iklim karakterindeki havzalar için kuraklık yönetim planları",
+          "backgroundImage": "assets/img/reference-8.png",
+          "icon": "fas fa-thermometer-half",
+          "details": "Akdeniz kıyısındaki Antalya Havzası ile yarı kurak iç bölgede yer alan Burdur Havzası, iklim değişikliğine bağlı olarak artan su stresiyle karşı karşıya kalan ve hidrolojik açıdan farklı karakterlere sahip iki önemli bölgedir."
+        },
+        {
+          "title": "Kızılırmak Havzası Master Planı",
+          "description": "Türkiye'nin ikinci en büyük havzası için ana plan geliştirilmesi",
+          "backgroundImage": "assets/img/reference-9.png",
+          "icon": "fas fa-map",
+          "details": "Türkiye'nin 82.000 km²'lik yüzölçümüyle ikinci en büyük havzası olan Kızılırmak Havzası, artan nüfus, tarımsal genişleme ve iklim değişkenliği nedeniyle giderek artan baskılar altında, çeşitli su taleplerini dengelemeye yönelik ileri görüşlü bir ana plana ihtiyaç duymuştur."
+        }
+      ]
+    },
+    "detailsButton": "Detaylar"
+  },
+  "team": {
+    "title": "Kurucu Ekibimiz",
+    "subtitle": "Mecra, iki kıdemli mühendisin ortak su kaynakları ve çevre mühendisliğinde <b>teknik hassasiyet, bilimsel dürüstlük ve kamusal fayda</b> odağında standartları yükseltme vizyonuyla kurulmuştur.<br><br><b>Danışmanlık, uygulamalı araştırma</b> ve <b>stratejik planlama</b> alanlarındaki tamamlayıcı geçmişleriyle, kurucu ekip Mecra’nın karmaşık problemlere yaklaşımını tanımlayan disiplinlerarası bakış açısını yansıtıyor.<br><br>Temel güçlü yönleri şunlardır:<br>💧 Büyük ölçekli AB destekli ve ulusal projelerde liderlik: Havza planlaması, iklim uyumu, kuraklık riski yönetimi ve çevresel uyum konularında karmaşık görevlerin koordinasyonunda ve tesliminde kanıtlanmış deneyim.<br>💧 İleri düzey modelleme ve analitik uzmanlık: Yağış-akış simülasyonu, kirletici akıbeti modellemesi, arıtma sistemlerinde CFD tabanlı tanı ve CBS entegrasyonlu karar destek platformlarının geliştirilmesinde uzmanlık.<br>💧 Güçlü kurumsal ve paydaş etkileşimi: Kamu otoriteleri, hizmet sağlayıcılar ve uluslararası ortaklarla politika geliştirme, kapasite geliştirme ve yatırım planlamasında başarılı işbirliği geçmişi.<br><br>Kurucular, <b>Havza Yönetim Planları, Su Tahsis Planları, Kuraklık Yönetim Planları, Entegre Kentsel Su Yönetim Planları, Su Kaynakları Ana Planları</b> ve <b>İçme Suyu ve Atıksu Ana Planları</b> gibi, ulusal öncelikler, AB direktifleri ve küresel sürdürülebilirlik çerçeveleriyle tam uyumlu birçok çalışmada kilit rol üstlenmiştir.<br><br>Birlikte, Mecra’yı <b>teknik mükemmeliyet, açık </b><b>işbirliği</b><b> ve amaç odaklı yenilik</b> ilkeleriyle yönetmekte; karmaşık su sorunlarını insanlar ve ekosistemler için çözümlere dönüştürmektedirler.",
+    "members": [
+      {
+        "name": "Dr. Emre Köken",
+        "position": "Kurucu Ortak <br> Kıdemli Su Kaynakları & Çevresel Modelleme Uzmanı",
+        "description": "15 yılı aşkın deneyimi ile bütünleşik su yönetimi ve çevresel modellemede uzman, stratejik vizyona sahip bir çevre ve inşaat mühendisidir.",
+        "detailedBio": "Emre Köken, Türkiye’de <b>bütünleşik su kaynakları yönetimi, kuraklık planlaması ve çevresel modelleme</b> alanlarında ulusal stratejilerin şekillendirilmesinde yaklaşık yirmi yıllık deneyime sahip bir inşaat ve çevre mühendisidir. Çalışmaları, <b>mühendislik tasarımı, bilimsel modelleme</b> ve <b>kamu politikası</b> kesişiminde yer almaktadır.<br><br>Köken, <b>Havza Yönetim Planları, Su Tahsis Planları</b> ve <b>Kuraklık Yönetim Planları</b> hazırlıklarına dokuzdan fazla büyük havzada liderlik etmiş, Türkiye’nin su yönetimini <b>AB Su Çerçeve </b><b>Direktifi’ne</b> uyumlu hale getirmeye yardımcı olmuştur. Liderliği, kurumların karmaşık hidrolojik, iklimsel ve düzenleyici zorlukları <b>pratik, bilim temelli eylem planlarına</b> dönüştürmesini sağlamıştır.<br><br>Dr. Köken’in portföyü, havza ölçeğinde hidrolojik ve su kalitesi modellemesi, kirletici akıbeti değerlendirmesi, iklim kırılganlığı analizi ve ileri düzey atıksu sistem tasarımı gibi alanlara uzanır; buna CFD tabanlı süreç simülasyonları ve arıtma altyapısının optimizasyonu da dahildir.<br><br>Su verimliliği, fiyatlandırma ve su hizmetlerinin ekonomik analizi konularında ulusal rehberler kaleme almış; ayrıca Türkiye’nin en kapsamlı yeni kirleticiler ulusal çalışmasını yürütmüştür. Yaklaşımı, yüksek çözünürlüklü modelleme, veri şeffaflığı ve mevzuat uyumunu birleştirerek dirençli, kanıta dayalı su yönetimini desteklemektedir.<br><br>Teknik derinlik, mevzuat deneyimi ve tasarım bilgisini bir araya getiren Dr. Köken, Mecra’nın misyonunu harekete geçiren vizyon ve liderliği sağlar: Bugünün en zorlu su sorunlarına hassas, akıllı ve uygulanabilir çözümler sunmak.",
+        "icon": "emre.jpg",
+        "linkedin": "https://linkedin.com/in/emrekoken",
+        "email": "emrekoken@mecra.tech"
+      },
+      {
+        "name": "Mustafa Kemal Türkeri",
+        "position": "Kurucu Ortak <br> Kıdemli Su Kaynakları & İklim Dirençliliği Uzmanı",
+        "description": "On yılı aşkın deneyime sahip, iklim dirençliliği, kuraklık planlaması ve yüksek çözünürlüklü hidrolojik modelleme konularında uzman bir su kaynakları mühendisidir.",
+        "detailedBio": "Mustafa Kemal Türkeri, <b>iklim dirençliliği, kuraklık planlaması ve hidrolojik modelleme</b> alanlarında uzmanlaşmış bir su kaynakları mühendisidir. Türkiye’nin en su stresi yaşayan bölgelerinde on yılı aşkın deneyime sahip olan Türkeri’nin çalışmaları, <b>uyarlanabilir, bilime dayalı stratejiler</b> geliştirmeye ve bu stratejileri çevresel riskler ile yerel ihtiyaçlara uyumlu hale getirmeye odaklanır.<br><br>Kendisi, Türkiye’nin ilk Kuraklık Yönetim Planı’nın (Konya Havzası) hazırlanmasında kilit rol üstlenmiş ve proje koordinatörü ile teknik uzman olarak çok sayıda ulusal ve uluslararası projeye katkı sunmuştur.<br><br>Temel teknik yetkinlikleri şunları içerir:<br>💧 <b>CMIP5/CMIP6 ve CORDEX</b> kullanılarak iklim değişikliği modellemeleri; ölçek indirgeme ve hassasiyet değerlendirmeleriyle birlikte<br>💧 Senaryoya dayalı rezervuar işletimi ve su tahsis planlamasını destekleyen WEAP, HEC-HMS, HEC-RAS ve SWAT ile gelişmiş hidrolojik modelleme<br>💧 CBS tabanlı kuraklık risk haritalama, <b>kentsel ısı adası analizi</b> ve <b>kıyı kırılganlığı çalışmaları</b>, İstanbul’un iklim direnci stratejisi için uygulamalar dâhil<br>💧 Tarım, turizm ve su temini sektörlerine yönelik havza ölçekli uyum çerçevelerine doğa bazlı çözümlerin entegrasyonu<br>💧 Python, MATLAB, R ve Fortran kullanarak <b>özel coğrafi bilgi sistemi araçları</b> ve iklim modelleme yazılımları geliştirme<br><br>Mustafa Kemal Türkeri’nin mühendislik derinliği, modelleme yetkinliği ve iklim öngörüsü konusundaki benzersiz birleşimi, Mecra’nın su kaynakları ve çevresel planlamadaki en zorlu sorunlara yüksek çözünürlüklü, bilime dayalı çözümler sunmak misyonunun arkasındaki itici güçtür.",
+        "icon": "kemal.jpg",
+        "linkedin": "https://www.linkedin.com/in/mustafa-kemal-t%C3%BCrkeri-326274104/",
+        "github": "https://github.com/mustafakemalturkeri",
+        "email": "mustafakemalturkeri@mecra.tech"
+      }
+    ]
+  },
+  "patents": {
+    "title": "Patentler ve İnovasyonlar",
+    "subtitle": "Ar-Ge çalışmalarımız, ikincil çöktürücülerdeki performansı artıran üç patent başvurusu yapılmış ürün ortaya koymuştur:",
+    "items": [
+      {
+        "title": "Merkezden Girişli Dairesel Çöktürücülerde Dip Akım Kısa Devre Sorununu Azaltan Yeni Tip Salyangoz Şekilli Çamur Tahliye Borusu Tasarımı",
+        "image": "assets/img/patent1.png"
+      },
+      {
+        "title": "Merkezden Girişli Dairesel Çöktürücülerde Dip Akım Kısa Devre Sorununu Azaltan Yeni Tip Spiral Şekilli Çamur Tahliye Borusu Tasarımı",
+        "image": "assets/img/patent2.png"
+      },
+      {
+        "title": "Karşı Jet Nozul Tipi Enerji Sönümleyici Giriş Yapısına Sahip Merkezden Girişli Dairesel Çöktürücülerde, Çamur Tabakası Sürüklenmesi Sorununu Azaltmak için Yatayda Çoklu Odalardan ve Dikeyde Çok Katmanlı Plakadan Oluşan Yeni Tip Enerji Sönümleyici Tasarımı",
+        "image": "assets/img/patent3.png"
+      }
+    ]
+  },
+  "whyMecra": {
+    "title": "Neden Mecra?",
+    "subtitle": "Mecra, bilimin, stratejinin ve sürdürülebilirliğin kesişim noktasında ileri düzey uzmanlık sunar. Biz sadece bir danışmanlık firması değiliz — karmaşık su ve çevre sorunlarına yönelik dirençli, veri odaklı çözümler tasarlayan ve uygulayan teknik ortaklarız.<br><br>Su ve çevre teknolojlerinde lider olmamızı sağlayan beş temel özelliğimiz:",
+    "items": [
+      {
+        "icon": "fas fa-award",
+        "title": "Köklü Uzmanlık",
+        "description": "Ekibimiz, su kaynakları yönetimi, iklim riski analizi, ekolojik değerlendirme ve çevresel planlama alanlarında, ulusal ve AB destekli amiral gemisi projelerde liderlik yaparak şekillenmiş 20 yılı aşkın üst düzey deneyime sahiptir."
+      },
+      {
+        "icon": "fas fa-handshake",
+        "title": "Kurumların Güvendiği, Donörlerin Tercih Ettiği Ortak",
+        "description": "Mecra uzmanları, ödül kazanmış teknik tekliflerin yazarlarıdır ve bakanlıklar, uluslararası finans kuruluşları (IFIs) ve kalkınma ajansları için kritik görevler üstlenmiştir. Hassasiyetin, güvenilirliğin ve AB direktifleriyle uyumun temel olduğu işlerde sıklıkla lider olarak seçiliriz."
+      },
+      {
+        "icon": "fas fa-project-diagram",
+        "title": "Havza Ölçeğinde Sistem Yaklaşımı",
+        "description": "Entegre planlamada uzmanız — hidrolojik, ekolojik, sosyo-ekonomik ve hukuki boyutları bir araya getirerek bütüncül stratejiler oluşturuyoruz. Nehir havzası modellemesinden sektörel su tahsisine ve kirletici kaynak kontrolüne kadar tüm yöntemlerimiz bütüncül, uyarlanabilir ve ileriye dönüktür."
+      },
+      {
+        "icon": "fas fa-cogs",
+        "title": "Fikirden Uygulamaya",
+        "description": "Projelerin tüm yaşam döngüsünü destekliyoruz — teşhis, modelleme, planlama, paydaş katılımı, mevzuat uyumu ve uygulama dahil olmak üzere tüm adımlarda AB Su Çerçeve Direktifi, Sürdürülebilir Kalkınma Hedefleri ve iklim dirençliliği standartlarıyla tam uyumlu çalışıyoruz."
+      },
+      {
+        "icon": "fas fa-check-circle",
+        "title": "Çevik. Güvenilir. Sonuç Odaklı",
+        "description": "Mecra, teknik mükemmeliyet, stratejik öngörü ve sarsılmaz müşteri bağlılığıyla tanınır. Zamanında, hedefe uygun ve hem bilimsel olarak sağlam hem de operasyonel olarak uygulanabilir çözümler sunarız."
+      }
+    ]
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Tanışmak ve iş birliği yapmak için bize ulaşın.",
+    "form": {
+      "title": "Bize Ulaşın",
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "company": "Şirket",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "privacy": "Gizlilik Politikası'nı okudum ve kabul ediyorum",
+      "submit": "Mesaj Gönder",
+      "required": "*",
+      "subjectOptions": {
+        "default": "Konu seçin...",
+        "consulting": "Danışmanlık Hizmetleri",
+        "project": "Proje Teklifi",
+        "partnership": "Ortaklık",
+        "career": "Kariyer",
+        "other": "Diğer"
+      }
+    },
+    "info": {
+      "title": "İletişim Bilgileri",
+      "logo": "assets/img/logo.svg",
+      "subtitle": "Mecra Su ve Çevre Teknolojileri ARGE A.Ş.",
+      "address": {
+        "title": "Adres",
+        "content": "Mecra Su ve Çevre Teknolojileri ARGE A.Ş.\nÇukurambar Mah. 1480 Sk. No: 2A/37 Besa Kule İş Merkezi \n06510 Çankaya Ankara, Türkiye"
+      },
+      "email": {
+        "title": "E-posta",
+        "content": "mecra@mecra.tech"
+      },
+      "phone": {
+        "title": "Telefon",
+        "content": "+90 (532) 345 05 10"
+      }
+    },
+    "map": {
+      "title": "Konumumuz",
+      "placeholder": "Harita entegrasyonu için Google Maps API kullanılabilir"
+    }
+  },
+  "footer": {
+    "companyName": "Mecra Su ve Çevre Teknolojileri ARGE A.Ş.",
+    "description": "Su ve çevre teknolojilerinde öncü çözümler sunuyoruz.",
+    "contactTitle": "İletişim",
+    "email": "mecra@mecra.tech",
+    "phone": "+90 (532) 345 05 10",
+    "copyright": "© 2025 Mecra Su ve Çevre Teknolojileri ARGE A.Ş. Tüm hakları saklıdır.",
+    "footerImage": "assets/img/logo-white.svg"
+  },
+  "common": {
+    "pageTitle": "Mecra Su ve Çevre Teknolojileri ARGE A.Ş.",
+    "loading": "Yükleniyor...",
+    "readMore": "Devamını Oku",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "add": "Ekle",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "sort": "Sırala",
+    "view": "Görüntüle",
+    "download": "İndir",
+    "upload": "Yükle",
+    "share": "Paylaş",
+    "print": "Yazdır",
+    "export": "Dışa Aktar",
+    "import": "İçe Aktar",
+    "details": "Detaylar"
+  }
+}

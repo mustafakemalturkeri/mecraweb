@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Mecra Su ve Çevre Teknolojileri ARGE A.Ş.</title>
+    <meta name="description" content="Mecra Water and Environment Technologies R&D Company - Leading solutions in water management, environmental engineering, and innovative technologies">
+    <meta name="keywords" content="water management, environmental engineering, R&D, technology, sustainable solutions">
+    
+    <!-- Bootstrap 5.3.2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/#home">
+                <img src="assets/img/logo-white.png" alt="Mecra Logo">
+                <span id="nav-brand-text"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="nav-menu">
+                    <!-- Navigation items will be loaded dynamically -->
+                </ul>
+                <div class="d-flex align-items-center ms-3">
+                    <div class="language-switcher">
+                        <button class="language-btn" data-lang="tr" onclick="console.log('TR clicked')">TR</button>
+                        <button class="language-btn active" data-lang="en" onclick="console.log('EN clicked')">EN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="main-content">
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" class="d-none">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden" id="loading-text">Loading...</span>
+            </div>
+        </div>
+
+        <!-- Sections will be loaded here dynamically -->
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <img id="footer-logo" src="" alt="Logo" style="height: 25px; width: auto; margin-right: 15px;">
+                        <h5 id="footer-company-name" class="mb-0"></h5>
+                    </div>
+                    <p id="footer-copyright" class="mb-0 ms-5"></p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Address Section -->
+                    <div class="footer-address">
+                        <h6 id="footer-address-title">İletişim Bilgileri</h6>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://www.google.com/maps/place/Besa+Kule+%C4%B0%C5%9F+Merkezi/@39.9093303,32.8040126,17z/data=!3m1!4b1!4m6!3m5!1s0x14d34f4caf19fb4f:0x448abe9f8c96828d!8m2!3d39.9093303!4d32.8040126!16s%2Fg%2F11cmczflbr?hl=tr&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="footer-address-link">
+                                <span id="footer-address-content"></span>
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="#" id="footer-email-link" class="footer-email-link">
+                                <span id="footer-email-content"></span>
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="#" id="footer-phone-link" class="footer-phone-link">
+                                <span id="footer-phone-content"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<hr class="my-4">
+            <div class="row">
+                
+            </div>-->
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Global debug flag
+        window.MECRA_DEBUG = true;
+        
+        // Initialize global objects
+        window.mecraApp = {
+            textManager: null,
+            contentLoader: null,
+            initialized: false
+        };
+        
+        console.log('🚀 Starting Mecra app initialization...');
+        
+        // Load scripts sequentially
+        async function loadScripts() {
+            console.log('📥 Loading scripts...');
+            
+            // Load text manager
+            await loadScript('assets/js/text-manager.js');
+            console.log('✅ Text manager loaded');
+            
+            // Initialize TextManager
+            if (window.textManager) {
+                window.mecraApp.textManager = window.textManager;
+                console.log('✅ TextManager assigned to mecraApp');
+            }
+            
+            // Load content manager
+            await loadScript('assets/js/content-manager.js');
+            console.log('✅ Content manager loaded');
+            
+            // Initialize ContentManager after TextManager
+            if (window.ContentManager) {
+                window.contentManager = new ContentManager();
+                console.log('✅ ContentManager initialized');
+            }
+            
+            // Load main
+            await loadScript('assets/js/main.js');
+            console.log('✅ Main script loaded');
+            
+            // Load scroll animations
+            await loadScript('assets/js/scroll-animations.js');
+            console.log('✅ Scroll animations loaded');
+            
+            // Load content loader
+            await loadScript('assets/js/content-loader.js');
+            console.log('✅ Content loader loaded');
+            
+            // Load service background handler
+            await loadScript('assets/js/service-background.js');
+            console.log('✅ Service background handler loaded');
+            
+            console.log('🎉 All scripts loaded!');
+        }
+        
+        function loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = src;
+                script.onload = resolve;
+                script.onerror = reject;
+                document.head.appendChild(script);
+            });
+        }
+        
+        // Start loading scripts
+        loadScripts().catch(console.error);
+    </script>
+    
+    <script>
+        // Initialize the application
+        window.mecraApp = {
+            textManager: null,
+            contentLoader: null,
+            initialized: false
+        };
+
+        // Load navigation and footer content when page loads
+        document.addEventListener('DOMContentLoaded', async function() {
+            console.log('📖 DOM Content Loaded - Starting app initialization...');
+            
+            // Wait for scripts to load
+            let attempts = 0;
+            while ((!window.mecraApp.textManager || !window.contentManager) && attempts < 50) {
+                console.log(`⏳ Waiting for scripts... Attempt ${attempts + 1}`);
+                await new Promise(resolve => setTimeout(resolve, 200));
+                attempts++;
+            }
+            
+            if (!window.mecraApp.textManager) {
+                console.error('❌ TextManager not loaded after 50 attempts');
+                return;
+            }
+            
+            if (!window.contentManager) {
+                console.error('❌ ContentManager not loaded after 50 attempts');
+                return;
+            }
+            
+            try {
+                // TextManager is already initialized, just check if it's ready
+                console.log('⏳ Checking TextManager status...');
+                console.log('TextManager isLoaded:', window.mecraApp.textManager.isLoaded);
+                
+                if (!window.mecraApp.textManager.isLoaded) {
+                    console.log('📥 Loading texts...');
+                    await window.mecraApp.textManager.loadTexts();
+                } else {
+                    console.log('✅ TextManager already loaded');
+                }
+                
+                console.log('✅ TextManager ready');
+                
+                // Wait for ContentManager to be initialized
+                console.log('⏳ Waiting for ContentManager to be initialized...');
+                while (!window.contentManager || !window.contentManager.isInitialized) {
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+                console.log('✅ ContentManager initialized');
+                
+                // Set page title
+                document.getElementById('page-title').textContent = window.mecraApp.textManager.texts.common.pageTitle;
+                document.title = window.mecraApp.textManager.texts.common.pageTitle;
+                
+                // Load navigation
+                function loadNavigation() {
+                    const navData = window.mecraApp.textManager.texts.navigation;
+                    document.getElementById('nav-brand-text').textContent = navData.brand;
+                    
+                    // Load navigation menu
+                    const navMenu = document.getElementById('nav-menu');
+                    let navHTML = '';
+                    navData.items.forEach(item => {
+                        navHTML += `<li class="nav-item"><a class="nav-link" href="${item.href}">${item.text}</a></li>`;
+                    });
+                    navMenu.innerHTML = navHTML;
+                }
+                
+                // Initial navigation load
+                loadNavigation();
+                
+                // Load footer
+                function loadFooter() {
+                    const footerData = window.mecraApp.textManager.texts.footer;
+                    const contactData = window.mecraApp.textManager.texts.contact;
+                    
+                    document.getElementById('footer-logo').src = footerData.footerImage || 'assets/img/logo-white.svg';
+                    document.getElementById('footer-company-name').textContent = footerData.companyName;
+                    
+                    // Address information from contact section
+                    document.getElementById('footer-address-title').textContent = contactData.info.title;
+                    document.getElementById('footer-address-content').textContent = contactData.info.address.content;
+                    document.getElementById('footer-email-content').textContent = contactData.info.email.content;
+                    document.getElementById('footer-phone-content').textContent = contactData.info.phone.content;
+                    
+                    // Set up mailto link properly
+                    const emailLink = document.getElementById('footer-email-link');
+                    emailLink.href = `mailto:${contactData.info.email.content}`;
+                    
+                    // Set up tel link for phone
+                    const phoneLink = document.getElementById('footer-phone-link');
+                    const phoneNumber = contactData.info.phone.content.replace(/\s+/g, '').replace(/[()]/g, '');
+                    phoneLink.href = `tel:${phoneNumber}`;
+                    
+                    document.getElementById('footer-copyright').textContent = footerData.copyright;
+                }
+                
+                // Initial footer load
+                loadFooter();
+                
+                // Listen for language changes and update footer
+                document.addEventListener('languageChanged', function(event) {
+                    console.log('🔄 Language changed - updating navigation and footer');
+                    loadNavigation();
+                    loadFooter();
+                });
+                
+                // Load loading text
+                document.getElementById('loading-text').textContent = window.mecraApp.textManager.texts.common.loading;
+                
+                // Mark as initialized
+                window.mecraApp.initialized = true;
+                console.log('✅ App base initialization complete');
+                
+                // Initialize content loader after everything is ready
+                console.log('🚀 Starting ContentLoader...');
+                if (typeof ContentLoader !== 'undefined') {
+                    window.mecraApp.contentLoader = new ContentLoader();
+                    console.log('✅ ContentLoader initialized');
+                } else {
+                    console.error('❌ ContentLoader class not found');
+                }
+                
+            } catch (error) {
+                console.error('❌ Error initializing application:', error);
+            }
+        });
+    </script>
+</body>
+</html>
