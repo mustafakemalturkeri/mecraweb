@@ -92,7 +92,7 @@ class ContentManager {
         
         let html = `
             <h2 class="section-title">${servicesData.title}</h2>
-            <p class="text-center mb-5 scroll-animate-fade">${servicesData.subtitle}</p>
+            <p class="mb-5 scroll-animate-fade" style="text-align: justify;">${servicesData.subtitle}</p>
             <div class="row">
         `;
         
@@ -187,14 +187,14 @@ class ContentManager {
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="section-title">${projects.title}</h2>
-                    <p class="section-subtitle">${projects.subtitle}</p>
+                    <p class="section-subtitle" style="text-align: justify;">${projects.subtitle}</p>
                 </div>
                 
                 <!-- Flagship Projects Section -->
                 <div class="mb-5">
                     <div class="text-center mb-4">
                         <h3 class="subsection-title">${projects.flagshipProjects.title}</h3>
-                        <p class="subsection-subtitle">${projects.flagshipProjects.subtitle}</p>
+                        <p class="subsection-subtitle" style="text-align: justify;">${projects.flagshipProjects.subtitle}</p>
                     </div>
                     <div class="row">
                         ${flagshipHTML}
@@ -205,7 +205,7 @@ class ContentManager {
                 <div class="mb-5">
                     <div class="text-center mb-4">
                         <h3 class="subsection-title">${projects.keyReferences.title}</h3>
-                        <p class="subsection-subtitle">${projects.keyReferences.subtitle}</p>
+                        <p class="subsection-subtitle" style="text-align: justify;">${projects.keyReferences.subtitle}</p>
                     </div>
                     <div class="row">
                         ${referencesHTML}
@@ -374,7 +374,7 @@ class ContentManager {
         let html = `
             <div class="text-center mb-5" data-aos="fade-up">
                 <h2 class="section-title">${patentsData.title}</h2>
-                <p class="section-subtitle" ">${patentsData.subtitle}</p>
+                <p class="section-subtitle" style="text-align: justify;">${patentsData.subtitle}</p>
             </div>
             <div class="row">
         `;

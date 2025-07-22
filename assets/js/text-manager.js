@@ -442,10 +442,10 @@ class TextManager {
         const footerHTML = `
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="text-align: justify;">
                         <img src="${this.getCacheBustedImageUrl(footer.footerImage)}" alt="${footer.companyName}">
-                        <h5>${footer.companyName}</h5>
-                        <p>${footer.description}</p>
+                        <h5 style="text-align: justify;">${footer.companyName}</h5>
+                        <p style="text-align: justify;">${footer.description}</p>
                     </div>
                     <div class="col-md-6">
                         <h5>${footer.contactTitle}</h5>
@@ -596,7 +596,7 @@ function createServiceModal() {
                 </div>
                 <h2 class="service-modal-title" id="serviceModalTitle"></h2>
             </div>
-            <div class="service-modal-body">
+            <div class="service-modal-body" style="text-align: justify;">
                 <div class="service-modal-description" id="serviceModalDescription"></div>
             </div>
             <div class="service-modal-footer">
@@ -921,8 +921,8 @@ function createProjectModal() {
                 <h2 class="project-modal-title" id="projectModalTitle"></h2>
             </div>
             <div class="project-modal-body">
-                <p class="project-modal-description" id="projectModalDescription"></p>
-                <div class="project-modal-details" id="projectModalDetails"></div>
+                <p class="project-modal-description" id="projectModalDescription" style="text-align: justify;"></p>
+                <div class="project-modal-details" id="projectModalDetails" style="text-align: justify;"></div>
             </div>
             <div class="project-modal-footer">
                 <button class="project-modal-close-btn" onclick="closeProjectModal()">
