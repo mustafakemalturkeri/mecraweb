@@ -127,61 +127,159 @@
         
         console.log('🚀 Starting Mecra app initialization...');
         
-        // Load scripts sequentially
+        // Load scripts sequentially with proper initialization
         async function loadScripts() {
             console.log('📥 Loading scripts...');
             
-            // Load text manager
-            await loadScript('assets/js/text-manager.js');
-            console.log('✅ Text manager loaded');
-            
-            // Initialize TextManager
-            if (window.textManager) {
-                window.mecraApp.textManager = window.textManager;
-                console.log('✅ TextManager assigned to mecraApp');
+            try {
+                // Load text manager first
+                await loadScript('assets/js/text-manager.js');
+                console.log('✅ Text manager loaded');
+                
+                // Wait a bit for the script to fully initialize
+                await new Promise(resolve => setTimeout(resolve, 100));
+                
+                // Initialize TextManager
+                if (window.textManager) {
+                    window.mecraApp.textManager = window.textManager;
+                    console.log('✅ TextManager assigned to mecraApp');
+                } else {
+                    console.warn('⚠️ TextManager not found, waiting...');
+                    // Wait for TextManager to be available
+                    let attempts = 0;
+                    while (!window.textManager && attempts < 20) {
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        attempts++;
+                    }
+                    if (window.textManager) {
+                        window.mecraApp.textManager = window.textManager;
+                        console.log('✅ TextManager found and assigned');
+                    } else {
+                        throw new Error('TextManager failed to load');
+                    }
+                }
+                
+                // Load content manager
+                await loadScript('assets/js/content-manager.js');
+                console.log('✅ Content manager loaded');
+                
+                // Wait for ContentManager class to be available
+                await new Promise(resolve => setTimeout(resolve, 100));
+                
+                // Initialize ContentManager after TextManager
+                if (window.ContentManager) {
+                    window.contentManager = new ContentManager();
+                    console.log('✅ ContentManager initialized');
+                } else {
+                    console.warn('⚠️ ContentManager class not found, waiting...');
+                    let attempts = 0;
+                    while (!window.ContentManager && attempts < 20) {
+                        await new Promise(resolve => setTimeout(resolve, 100));
+                        attempts++;
+                    }
+                    if (window.ContentManager) {
+                        window.contentManager = new ContentManager();
+                        console.log('✅ ContentManager found and initialized');
+                    } else {
+                        throw new Error('ContentManager failed to load');
+                    }
+                }
+                
+                // Load remaining scripts with delays
+                await loadScript('assets/js/main.js');
+                await new Promise(resolve => setTimeout(resolve, 50));
+                console.log('✅ Main script loaded');
+                
+                await loadScript('assets/js/scroll-animations.js');
+                await new Promise(resolve => setTimeout(resolve, 50));
+                console.log('✅ Scroll animations loaded');
+                
+                await loadScript('assets/js/content-loader.js');
+                await new Promise(resolve => setTimeout(resolve, 50));
+                console.log('✅ Content loader loaded');
+                
+                await loadScript('assets/js/service-background.js');
+                await new Promise(resolve => setTimeout(resolve, 50));
+                console.log('✅ Service background handler loaded');
+                
+                console.log('🎉 All scripts loaded successfully!');
+                
+            } catch (error) {
+                console.error('❌ Error loading scripts:', error);
+                throw error;
             }
-            
-            // Load content manager
-            await loadScript('assets/js/content-manager.js');
-            console.log('✅ Content manager loaded');
-            
-            // Initialize ContentManager after TextManager
-            if (window.ContentManager) {
-                window.contentManager = new ContentManager();
-                console.log('✅ ContentManager initialized');
-            }
-            
-            // Load main
-            await loadScript('assets/js/main.js');
-            console.log('✅ Main script loaded');
-            
-            // Load scroll animations
-            await loadScript('assets/js/scroll-animations.js');
-            console.log('✅ Scroll animations loaded');
-            
-            // Load content loader
-            await loadScript('assets/js/content-loader.js');
-            console.log('✅ Content loader loaded');
-            
-            // Load service background handler
-            await loadScript('assets/js/service-background.js');
-            console.log('✅ Service background handler loaded');
-            
-            console.log('🎉 All scripts loaded!');
         }
         
         function loadScript(src) {
             return new Promise((resolve, reject) => {
+                console.log(`🔄 Loading script: ${src}`);
                 const script = document.createElement('script');
                 script.src = src;
-                script.onload = resolve;
-                script.onerror = reject;
+                script.onload = () => {
+                    console.log(`✅ Script loaded successfully: ${src}`);
+                    resolve();
+                };
+                script.onerror = (error) => {
+                    console.error(`❌ Script failed to load: ${src}`, error);
+                    reject(new Error(`Failed to load script: ${src}`));
+                };
                 document.head.appendChild(script);
             });
         }
         
-        // Start loading scripts
-        loadScripts().catch(console.error);
+        // Start loading scripts with error handling
+        loadScripts().then(() => {
+            console.log('🎉 All scripts initialization completed successfully!');
+        }).catch(error => {
+            console.error('❌ Critical error during script loading:', error);
+            console.error('Error details:', error.message, error.stack);
+            // Don't show the error overlay immediately, let the page try to load anyway
+            setTimeout(() => {
+                // Only show error if the page still hasn't loaded after 5 seconds
+                if (!window.mecraApp?.initialized) {
+                    console.warn('⚠️ Showing error overlay after timeout');
+                    showErrorOverlay();
+                }
+            }, 5000);
+        });
+        
+        function showErrorOverlay() {
+            const body = document.body;
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                padding: 20px;
+                box-sizing: border-box;
+            `;
+            errorDiv.innerHTML = `
+                <div>
+                    <h2>Loading Error</h2>
+                    <p>There was an issue loading the website. Please refresh the page.</p>
+                    <button onclick="location.reload()" style="
+                        background: #0891b2;
+                        color: white;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">Refresh Page</button>
+                </div>
+            `;
+            body.appendChild(errorDiv);
+        }
     </script>
     
     <script>
@@ -196,25 +294,49 @@
         document.addEventListener('DOMContentLoaded', async function() {
             console.log('📖 DOM Content Loaded - Starting app initialization...');
             
-            // Wait for scripts to load
+            // Wait for scripts to load with increased timeout
             let attempts = 0;
-            while ((!window.mecraApp.textManager || !window.contentManager) && attempts < 50) {
-                console.log(`⏳ Waiting for scripts... Attempt ${attempts + 1}`);
-                await new Promise(resolve => setTimeout(resolve, 200));
+            const maxAttempts = 100; // Increased from 50
+            
+            console.log('⏳ Waiting for essential scripts to load...');
+            while ((!window.mecraApp.textManager || !window.contentManager) && attempts < maxAttempts) {
+                if (attempts % 10 === 0) { // Log every 10th attempt to reduce console spam
+                    console.log(`⏳ Waiting for scripts... Attempt ${attempts + 1}/${maxAttempts}`);
+                    console.log('TextManager ready:', !!window.mecraApp.textManager?.isLoaded);
+                    console.log('ContentManager available:', !!window.contentManager);
+                }
+                await new Promise(resolve => setTimeout(resolve, 100)); // Wait 100ms between checks
                 attempts++;
             }
             
             if (!window.mecraApp.textManager) {
-                console.error('❌ TextManager not loaded after 50 attempts');
+                console.error('❌ TextManager not loaded after maximum attempts');
+                // Show user-friendly error message
+                const mainContent = document.getElementById('main-content');
+                if (mainContent) {
+                    mainContent.innerHTML = `
+                        <div class="container mt-5 pt-5">
+                            <div class="alert alert-warning text-center">
+                                <h4>Loading...</h4>
+                                <p>The page is still loading. Please wait a moment and refresh if the content doesn't appear.</p>
+                                <button class="btn btn-primary" onclick="location.reload()">Refresh Page</button>
+                            </div>
+                        </div>
+                    `;
+                }
                 return;
             }
             
             if (!window.contentManager) {
-                console.error('❌ ContentManager not loaded after 50 attempts');
+                console.error('❌ ContentManager not loaded after maximum attempts');
                 return;
             }
             
             try {
+                // Additional wait for everything to be ready
+                console.log('⏳ Ensuring all components are ready...');
+                await new Promise(resolve => setTimeout(resolve, 200));
+                
                 // TextManager is already initialized, just check if it's ready
                 console.log('⏳ Checking TextManager status...');
                 console.log('TextManager isLoaded:', window.mecraApp.textManager.isLoaded);
@@ -228,11 +350,19 @@
                 
                 console.log('✅ TextManager ready');
                 
-                // Wait for ContentManager to be initialized
+                // Wait for ContentManager to be initialized with timeout
                 console.log('⏳ Waiting for ContentManager to be initialized...');
-                while (!window.contentManager || !window.contentManager.isInitialized) {
+                let cmAttempts = 0;
+                while (!window.contentManager?.isInitialized && cmAttempts < 50) {
                     await new Promise(resolve => setTimeout(resolve, 100));
+                    cmAttempts++;
                 }
+                
+                if (!window.contentManager?.isInitialized) {
+                    console.error('❌ ContentManager failed to initialize');
+                    return;
+                }
+                
                 console.log('✅ ContentManager initialized');
                 
                 // Set page title
@@ -304,6 +434,13 @@
                 if (typeof ContentLoader !== 'undefined') {
                     window.mecraApp.contentLoader = new ContentLoader();
                     console.log('✅ ContentLoader initialized');
+                    
+                    // Set active language button after everything is loaded
+                    setTimeout(() => {
+                        if (typeof window.updateActiveLanguageButton === 'function') {
+                            window.updateActiveLanguageButton();
+                        }
+                    }, 500);
                 } else {
                     console.error('❌ ContentLoader class not found');
                 }

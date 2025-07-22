@@ -21,8 +21,15 @@ class ContentLoader {
         console.log('Waiting for TextManager and ContentManager...');
         // Wait for textManager and contentManager to be available and loaded
         let attempts = 0;
-        while ((!window.textManager || !window.textManager.isLoaded || !window.contentManager) && attempts < 50) {
-            console.log(`Attempt ${attempts + 1}: TextManager loaded:`, !!window.textManager?.isLoaded, 'ContentManager available:', !!window.contentManager);
+        const maxAttempts = 100; // Increased timeout
+        
+        while ((!window.textManager || !window.textManager.isLoaded || !window.contentManager) && attempts < maxAttempts) {
+            if (attempts % 10 === 0) { // Log every 10th attempt
+                console.log(`ContentLoader attempt ${attempts + 1}/${maxAttempts}:`);
+                console.log('- TextManager available:', !!window.textManager);
+                console.log('- TextManager loaded:', !!window.textManager?.isLoaded);
+                console.log('- ContentManager available:', !!window.contentManager);
+            }
             await new Promise(resolve => setTimeout(resolve, 100));
             attempts++;
         }
@@ -37,7 +44,21 @@ class ContentLoader {
             }
         }
         
-        console.log('TextManager and ContentManager are ready!');
+        if (!window.textManager || !window.textManager.isLoaded) {
+            console.error('❌ ContentLoader: TextManager not ready after maximum attempts');
+            return;
+        }
+        
+        if (!window.contentManager || !window.contentManager.isInitialized) {
+            console.error('❌ ContentLoader: ContentManager not ready after maximum attempts');
+            return;
+        }
+        
+        console.log('✅ ContentLoader: All dependencies ready!');
+        
+        // Additional safety delay before initialization
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
         this.init();
     }
 
@@ -391,6 +412,12 @@ class ContentLoader {
             const servicesHTML = window.contentManager.generateServicesHTML();
             servicesContent.innerHTML = servicesHTML;
             console.log('Services content loaded successfully');
+            
+            // Initialize background images for services (hover-based)
+            setTimeout(() => {
+                console.log('🖼️ Triggering background images for services...');
+                document.dispatchEvent(new CustomEvent('contentLoaded', { detail: { section: 'services' } }));
+            }, 200);
         } else {
             console.warn('Services content element not found or ContentManager not available');
         }
@@ -406,6 +433,28 @@ class ContentLoader {
             projectsContent.innerHTML = projectsHTML;
             console.log('Projects content loaded successfully');
             console.log('Projects content element after loading:', projectsContent);
+            
+            // Trigger background image initialization for projects
+            setTimeout(() => {
+                console.log('🖼️ Setting background images for projects...');
+                
+                // Set background images for project cards
+                const projectCards = projectsContent.querySelectorAll('.service-card[data-bg-image]');
+                console.log(`🎯 Found ${projectCards.length} project cards`);
+                
+                projectCards.forEach((card, index) => {
+                    const bgImage = card.getAttribute('data-bg-image');
+                    if (bgImage && bgImage.trim() !== '') {
+                        console.log(`🎨 Setting background for card ${index}: ${bgImage}`);
+                        card.style.backgroundImage = `url('${bgImage}')`;
+                        card.style.backgroundSize = 'cover';
+                        card.style.backgroundPosition = 'center';
+                        card.style.backgroundRepeat = 'no-repeat';
+                    }
+                });
+                
+                document.dispatchEvent(new CustomEvent('contentLoaded', { detail: { section: 'projects' } }));
+            }, 200);
         } else {
             console.warn('Projects content element not found or ContentManager not available');
         }

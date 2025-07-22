@@ -229,6 +229,30 @@ function createBackToTopButton() {
     });
 }
 
+// Update active language button based on current language
+function updateActiveLanguageButton() {
+    const languageButtons = document.querySelectorAll('.language-btn');
+    
+    let currentLang = 'en'; // Default fallback
+    
+    // Try to get current language from various sources
+    if (window.mecraApp?.textManager?.getCurrentLanguage) {
+        currentLang = window.mecraApp.textManager.getCurrentLanguage();
+    } else if (window.textManager?.getCurrentLanguage) {
+        currentLang = window.textManager.getCurrentLanguage();
+    }
+    
+    languageButtons.forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.dataset.lang === currentLang) {
+            btn.classList.add('active');
+        }
+    });
+}
+
+// Make function globally available
+window.updateActiveLanguageButton = updateActiveLanguageButton;
+
 // Initialize language switcher
 function initializeLanguageSwitcher() {
     console.log('🔤 Initializing language switcher...');
@@ -269,6 +293,9 @@ function initializeLanguageSwitcher() {
             button.style.cursor = 'pointer';
         });
         
+        // Set active button based on current language
+        updateActiveLanguageButton();
+        
         console.log('✅ Language switcher initialized successfully');
     }
     
@@ -281,11 +308,6 @@ async function handleLanguageClick(e) {
     e.preventDefault();
     
     const targetLang = this.dataset.lang;
-    const languageButtons = document.querySelectorAll('.language-btn');
-    
-    // Update button states
-    languageButtons.forEach(btn => btn.classList.remove('active'));
-    this.classList.add('active');
     
     // Show loading state
     const originalText = this.textContent;
@@ -297,6 +319,9 @@ async function handleLanguageClick(e) {
         if (window.mecraApp && window.mecraApp.textManager) {
             console.log('📥 Switching language to:', targetLang);
             await window.mecraApp.textManager.switchLanguage(targetLang);
+            
+            // Update active language button
+            updateActiveLanguageButton();
             
             // Update navigation and footer FIRST
             updateNavigationAndFooter();

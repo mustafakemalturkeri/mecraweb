@@ -7,12 +7,32 @@ class ContentManager {
     }
 
     async init() {
-        // Wait for textManager to be ready
-        while (!window.textManager || !window.textManager.isLoaded) {
+        console.log('ContentManager: Starting initialization...');
+        
+        // Wait for textManager to be ready with timeout
+        let attempts = 0;
+        const maxAttempts = 100;
+        
+        while ((!window.textManager || !window.textManager.isLoaded) && attempts < maxAttempts) {
+            if (attempts % 10 === 0) {
+                console.log(`ContentManager: Waiting for TextManager... Attempt ${attempts + 1}/${maxAttempts}`);
+                console.log('- TextManager available:', !!window.textManager);
+                console.log('- TextManager loaded:', !!window.textManager?.isLoaded);
+            }
             await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
         }
+        
+        if (!window.textManager || !window.textManager.isLoaded) {
+            console.error('❌ ContentManager: TextManager not ready after maximum attempts');
+            return;
+        }
+        
+        // Additional safety delay
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
         this.isInitialized = true;
-        console.log('Content Manager initialized and ready');
+        console.log('✅ ContentManager: Initialized and ready');
     }
 
     // Get content for a specific section from texts.json
@@ -125,40 +145,38 @@ class ContentManager {
             return '<div class="container"><h2>Projects data not found</h2></div>';
         }
         
-        // Generate flagship projects
-        const flagshipHTML = projects.flagshipProjects.items.map(project => {
+        // Generate flagship projects - use same structure as Services
+        const flagshipHTML = projects.flagshipProjects.items.map((project, index) => {
             return `
                 <div class="col-lg-6 mb-4">
-                    <div class="service-card h-100" data-background-image="${project.backgroundImage}">
-                        <div class="service-overlay">
-                            <div class="service-content">
-                                <div class="service-icon-wrapper">
-                                    <i class="${project.icon}"></i>
-                                </div>
-                                <h5 class="service-title">${project.title}</h5>
-                                <p class="service-description">${project.description}</p>
-                                <button class="btn btn-outline-light" onclick="showProjectDetails('${project.title}', '${project.details.replace(/'/g, "&apos;")}')">${projects.detailsButton}</button>
+                    <div class="card service-card service-card-clickable h-100" data-bg-image="${project.backgroundImage || ''}" data-project-type="flagship" data-project-index="${index}" onclick="openProjectModal('flagship', ${index})">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="${project.icon}"></i>
                             </div>
+                            <h4 class="service-title">${project.title}</h4>
+                            <button class="service-details-btn" onclick="event.stopPropagation(); openProjectModal('flagship', ${index})">
+                                ${this.getDetailsButtonText()}
+                            </button>
                         </div>
                     </div>
                 </div>
             `;
         }).join('');
 
-        // Generate key references (3 columns for 9 items)
-        const referencesHTML = projects.keyReferences.items.map(project => {
+        // Generate key references (3 columns for 9 items) - use same structure as Services
+        const referencesHTML = projects.keyReferences.items.map((project, index) => {
             return `
                 <div class="col-lg-4 mb-4">
-                    <div class="service-card h-100" data-background-image="${project.backgroundImage}">
-                        <div class="service-overlay">
-                            <div class="service-content">
-                                <div class="service-icon-wrapper">
-                                    <i class="${project.icon}"></i>
-                                </div>
-                                <h5 class="service-title">${project.title}</h5>
-                                <p class="service-description">${project.description}</p>
-                                <button class="btn btn-outline-light" onclick="showProjectDetails('${project.title}', '${project.details.replace(/'/g, "&apos;")}')">${projects.detailsButton}</button>
+                    <div class="card service-card service-card-clickable h-100" data-bg-image="${project.backgroundImage || ''}" data-project-type="reference" data-project-index="${index}" onclick="openProjectModal('reference', ${index})">
+                        <div class="card-body">
+                            <div class="service-icon">
+                                <i class="${project.icon}"></i>
                             </div>
+                            <h4 class="service-title">${project.title}</h4>
+                            <button class="service-details-btn" onclick="event.stopPropagation(); openProjectModal('reference', ${index})">
+                                ${this.getDetailsButtonText()}
+                            </button>
                         </div>
                     </div>
                 </div>

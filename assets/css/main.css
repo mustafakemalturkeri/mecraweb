@@ -338,7 +338,7 @@ body.modal-open {
     --color-accent: #06b2d4;       /* Bright teal - buttons, links */
     --color-text-dark: #1f2937;    /* Dark gray - main text */
     --color-text-light: #6b7280;   /* Light gray - secondary text */
-    --color-background: #f8f2f8;   /* Light background */
+    --color-background: #E7E6E6;   /* Light background */
     --color-white: #fcfcfd;        /* Pure white */
     --color-black: #000000;        /* Pure black */
     
@@ -1275,6 +1275,175 @@ body {
 .service-card .card-body {
     position: relative;
     z-index: 5; /* En üstte olsun */
+    transition: all 0.3s ease;
+}
+
+/* Background image support for dynamic loading */
+.service-card.has-background-image {
+    position: relative;
+    color: var(--color-white);
+}
+
+.service-card.has-background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.service-card.has-background-image .card-body {
+    position: relative;
+    z-index: 2;
+    background: transparent !important;
+}
+
+.service-card.has-background-image .service-title,
+.service-card.has-background-image .service-icon i,
+.service-card.has-background-image .service-description {
+    color: white !important;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.service-card.has-background-image .service-details-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.service-card.has-background-image .service-details-btn:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Projects section inherits all service card styles - no special overrides needed */
+
+/* Project card background images - Hover effect for flagship projects */
+.service-card[data-project-type="flagship"][data-project-index="0"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/flagship-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="flagship"][data-project-index="1"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/flagship-2.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+/* Project card background images - Hover effect for reference projects */
+.service-card[data-project-type="reference"][data-project-index="0"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-1.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="1"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-2.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="2"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-3.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="3"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-4.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="4"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-5.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="5"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-6.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="6"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-7.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="7"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-8.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="8"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-9.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    transition: all 0.3s ease;
+}
+
+.service-card[data-project-type="reference"][data-project-index="9"]:hover {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+        url('../img/reference-10.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     transition: all 0.3s ease;
 }
 
@@ -2320,20 +2489,22 @@ footer a:hover {
 
 .service-modal-close {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: var(--color-white);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    padding: 8px;
+    z-index: 10;
 }
 
 .service-modal-close:hover {
@@ -2505,20 +2676,22 @@ footer a:hover {
 
 .team-modal-close-top {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
     background: rgba(255, 255, 255, 0.2);
     border: none;
     color: var(--color-white);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    padding: 8px;
+    z-index: 10;
 }
 
 .team-modal-close-top:hover {
@@ -2813,5 +2986,227 @@ body.modal-open {
     
     .patent-description {
         font-size: 0.9rem;
+    }
+}
+
+/* Project Modal Styles */
+.project-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.project-modal-content {
+    background: var(--color-white);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 85vh;
+    overflow: hidden;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-modal.active .project-modal-content {
+    transform: scale(1);
+}
+
+.project-modal-header {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    color: var(--color-white);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--color-white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    padding: 8px;
+    z-index: 10;
+}
+
+.project-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.project-modal-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.project-modal-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.project-modal-body {
+    padding: 2rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.project-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.project-modal-body::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+}
+
+.project-modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+.project-modal-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.project-modal-details {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-dark);
+}
+
+.project-modal-details h4 {
+    color: var(--color-primary);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-modal-details ul {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+}
+
+.project-modal-details li {
+    margin-bottom: 0.5rem;
+}
+
+.project-modal-details br + br {
+    margin-bottom: 1rem;
+}
+
+.project-modal-footer {
+    padding: 1rem 2rem;
+    background: var(--color-background);
+    text-align: center;
+    border-top: 1px solid #eee;
+    flex-shrink: 0;
+}
+
+.project-modal-close-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-modal-close-btn:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive project modal */
+@media (max-width: 768px) {
+    .project-modal-content {
+        width: 95%;
+        max-height: 90vh;
+        margin: 1rem;
+    }
+    
+    .project-modal-header {
+        padding: 1.5rem;
+    }
+    
+    .project-modal-title {
+        font-size: 1.4rem;
+    }
+    
+    .project-modal-icon {
+        font-size: 3rem;
+    }
+    
+    .project-modal-body {
+        padding: 1.5rem;
+        max-height: 55vh;
+    }
+    
+    .project-modal-description {
+        font-size: 1rem;
+    }
+    
+    .project-modal-details {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-modal-header {
+        padding: 1rem;
+    }
+    
+    .project-modal-body {
+        padding: 1rem;
+    }
+    
+    .project-modal-title {
+        font-size: 1.2rem;
+    }
+    
+    .project-modal-icon {
+        font-size: 2.5rem;
     }
 }

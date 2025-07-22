@@ -2,7 +2,7 @@
 class TextManager {
     constructor() {
         this.texts = {};
-        this.currentLanguage = 'en';
+        this.currentLanguage = 'en'; // Default to English
         this.isLoaded = false;
         this.loadPromise = null;
         this.availableLanguages = ['tr', 'en'];
@@ -488,7 +488,9 @@ class TextManager {
     // Initialize text manager
     async init() {
         try {
-            await this.loadTexts();
+            // Load texts with the saved language preference (currentLanguage is set in constructor)
+            console.log(`🚀 Initializing TextManager with language: ${this.currentLanguage}`);
+            await this.loadTexts(this.currentLanguage);
             this.updatePageMeta();
             this.renderNavigation();
             this.applyTexts();
@@ -503,8 +505,17 @@ class TextManager {
 // Create global instance
 window.textManager = new TextManager();
 
+// Also assign to mecraApp if it exists, or create it
+if (typeof window.mecraApp === 'undefined') {
+    window.mecraApp = {};
+}
+window.mecraApp.textManager = window.textManager;
+
+console.log('🔧 TextManager instance created and assigned to global scope');
+
 // Auto-initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('📖 DOM ready, initializing TextManager...');
     window.textManager.init();
 });
 
@@ -823,67 +834,183 @@ function populateTeamModal(modal, member) {
 }
 
 // Global project modal functions
-function showProjectDetails(title, details) {
-    createProjectModal();
-    const modal = document.getElementById('projectModal');
-    populateProjectModal(modal, { title, details });
-    const bsModal = new bootstrap.Modal(modal);
-    bsModal.show();
+function openProjectModal(projectType, projectIndex) {
+    console.log('Opening project modal for project:', projectType, projectIndex);
+    
+    // Try different ways to access textManager
+    let textManager = null;
+    if (window.textManager && window.textManager.isLoaded) {
+        textManager = window.textManager;
+    } else if (window.mecraApp && window.mecraApp.textManager) {
+        textManager = window.mecraApp.textManager;
+    }
+    
+    if (!textManager) {
+        console.error('TextManager not available');
+        return;
+    }
+    
+    const projects = textManager.getText('projects');
+    if (!projects) {
+        console.error('Projects data not found');
+        return;
+    }
+    
+    let project = null;
+    if (projectType === 'flagship' && projects.flagshipProjects && projects.flagshipProjects.items) {
+        project = projects.flagshipProjects.items[projectIndex];
+    } else if (projectType === 'reference' && projects.keyReferences && projects.keyReferences.items) {
+        project = projects.keyReferences.items[projectIndex];
+    }
+    
+    if (!project) {
+        console.error('Project not found:', projectType, projectIndex);
+        return;
+    }
+    
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('projectModal');
+    if (!modal) {
+        modal = createProjectModal();
+        document.body.appendChild(modal);
+    }
+    
+    // Populate modal with project data
+    populateProjectModal(modal, project);
+    
+    // Show modal
+    document.body.classList.add('modal-open');
+    modal.classList.add('active');
+    
+    // Reset scroll position to top
+    setTimeout(() => {
+        const modalBody = modal.querySelector('.project-modal-body');
+        if (modalBody) {
+            modalBody.scrollTop = 0;
+        }
+        modal.scrollTop = 0;
+    }, 100);
+    
+    // Focus trap for accessibility
+    modal.focus();
 }
 
 function closeProjectModal() {
     const modal = document.getElementById('projectModal');
     if (modal) {
-        const bsModal = bootstrap.Modal.getInstance(modal);
-        if (bsModal) bsModal.hide();
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
     }
 }
 
 function createProjectModal() {
-    let modal = document.getElementById('projectModal');
-    if (modal) return modal;
-
-    modal = document.createElement('div');
-    modal.className = 'modal fade';
+    const modal = document.createElement('div');
     modal.id = 'projectModal';
+    modal.className = 'project-modal';
     modal.tabIndex = -1;
+    
     modal.innerHTML = `
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <div class="project-modal-content">
+            <div class="project-modal-header">
+                <button class="project-modal-close" onclick="closeProjectModal()" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="project-modal-icon" id="projectModalIcon">
+                    <!-- Icon will be populated dynamically -->
                 </div>
-                <div class="modal-body">
-                    <div class="project-details"></div>
-                </div>
+                <h2 class="project-modal-title" id="projectModalTitle"></h2>
+            </div>
+            <div class="project-modal-body">
+                <p class="project-modal-description" id="projectModalDescription"></p>
+                <div class="project-modal-details" id="projectModalDetails"></div>
+            </div>
+            <div class="project-modal-footer">
+                <button class="project-modal-close-btn" onclick="closeProjectModal()">
+                    Close
+                </button>
             </div>
         </div>
     `;
     
-    document.body.appendChild(modal);
-
+    // Close modal when clicking outside
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeProjectModal();
         }
     });
-
+    
+    // Close modal with Escape key
     modal.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeProjectModal();
         }
     });
-
+    
     return modal;
 }
 
 function populateProjectModal(modal, project) {
-    const title = modal.querySelector('.modal-title');
-    const details = modal.querySelector('.project-details');
+    // Update icon
+    const iconContainer = modal.querySelector('#projectModalIcon');
+    iconContainer.innerHTML = `<i class="${project.icon}"></i>`;
     
-    if (title) title.textContent = project.title;
-    if (details) details.innerHTML = project.details;
+    // Update title
+    modal.querySelector('#projectModalTitle').textContent = project.title;
+    
+    // Update description
+    modal.querySelector('#projectModalDescription').textContent = project.description;
+    
+    // Update details (if available)
+    const detailsContainer = modal.querySelector('#projectModalDetails');
+    if (project.details) {
+        detailsContainer.innerHTML = project.details;
+        detailsContainer.style.display = 'block';
+    } else {
+        detailsContainer.style.display = 'none';
+    }
+    
+    // Update close button text based on language
+    const commonData = window.textManager ? window.textManager.getText('common') : null;
+    let closeButtonText = 'Close'; // default
+    if (commonData && commonData.close) {
+        closeButtonText = commonData.close;
+    } else {
+        let currentLang = 'en'; // default
+        if (window.textManager && window.textManager.getCurrentLanguage) {
+            currentLang = window.textManager.getCurrentLanguage();
+        } else if (window.mecraApp && window.mecraApp.textManager && window.mecraApp.textManager.getCurrentLanguage) {
+            currentLang = window.mecraApp.textManager.getCurrentLanguage();
+        }
+        closeButtonText = currentLang === 'en' ? 'Close' : 'Kapat';
+    }
+    modal.querySelector('.project-modal-close-btn').textContent = closeButtonText;
+}
+
+// Legacy function for backward compatibility
+function showProjectDetails(title, details) {
+    console.log('Legacy showProjectDetails called, redirecting to new modal system');
+    const project = { title, details, icon: 'fas fa-project-diagram' };
+    
+    let modal = document.getElementById('projectModal');
+    if (!modal) {
+        modal = createProjectModal();
+        document.body.appendChild(modal);
+    }
+    
+    populateProjectModal(modal, project);
+    
+    document.body.classList.add('modal-open');
+    modal.classList.add('active');
+    
+    setTimeout(() => {
+        const modalBody = modal.querySelector('.project-modal-body');
+        if (modalBody) {
+            modalBody.scrollTop = 0;
+        }
+        modal.scrollTop = 0;
+    }, 100);
+    
+    modal.focus();
 }
 
 // Make functions globally available
@@ -891,8 +1018,9 @@ window.openServiceModal = openServiceModal;
 window.closeServiceModal = closeServiceModal;
 window.openTeamModal = openTeamModal;
 window.closeTeamModal = closeTeamModal;
-window.showProjectDetails = showProjectDetails;
+window.openProjectModal = openProjectModal;
 window.closeProjectModal = closeProjectModal;
+window.showProjectDetails = showProjectDetails;
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {
