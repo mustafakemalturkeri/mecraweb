@@ -47,7 +47,6 @@ The website is hosted on GitHub Pages using our own domain: [https://mecra.tech]
   - Service detail modals
   - Project showcases
   - Team member profiles
-  - Contact forms
 - **Performance Optimized**: Optimized images and efficient loading
 - **SEO Friendly**: Proper meta tags and semantic HTML structure
 
@@ -266,7 +265,6 @@ The website uses a custom domain configured via the `CNAME` file.
 
 ### Optimizations
 - **Image Optimization**: Compressed images for faster loading
-- **CSS Minification**: Optimized stylesheets
 - **JavaScript Efficiency**: Modern ES6+ features and efficient DOM manipulation
 - **Lazy Loading**: Content loaded as needed
 - **CDN Usage**: Bootstrap and Font Awesome loaded from CDN
