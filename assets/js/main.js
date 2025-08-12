@@ -39,6 +39,9 @@ function initializeMecraWebsite() {
 
     // Initialize hero animations
     initializeHeroAnimations();
+
+    // Initialize navigation scroll handlers
+    initializeNavigationScrollHandlers();
 }
 
 // Function to initialize hero animations
@@ -101,6 +104,106 @@ function initializeNavbarScrollEffect() {
             }
         }
     }, { passive: true });
+}
+
+// Initialize navigation scroll handlers
+function initializeNavigationScrollHandlers() {
+    console.log('🔗 Setting up navigation scroll handlers...');
+    
+    // Wait a bit for content to load
+    setTimeout(() => {
+        const scrollLinks = document.querySelectorAll('.nav-link[href^="#"], .btn-hero[href^="#"], .scroll-down[href^="#"]');
+        console.log('Found scroll links:', scrollLinks.length);
+        
+        // Log each link found
+        scrollLinks.forEach((link, index) => {
+            console.log(`Link ${index + 1}:`, link.getAttribute('href'), link.textContent.trim());
+        });
+        
+        scrollLinks.forEach(link => {
+            // Remove any existing listeners first
+            link.removeEventListener('click', handleScrollClick);
+            
+            link.addEventListener('click', handleScrollClick);
+        });
+        
+        console.log('✅ Navigation scroll handlers initialized');
+    }, 500); // Reduced timeout
+}
+
+// Separate scroll click handler
+function handleScrollClick(e) {
+    e.preventDefault();
+    
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    console.log('🎯 Scroll click:', targetId, 'Element found:', !!targetElement);
+                
+                if (targetElement) {
+                    // Calculate target position manually for better mobile compatibility
+                    const rect = targetElement.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetPosition = rect.top + scrollTop - 70; // 70px offset for navbar
+                    
+                    console.log('📍 Scrolling to position:', targetPosition);
+                    
+                    // Try multiple scroll methods for maximum compatibility
+                    try {
+                        // Method 1: Modern smooth scroll
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    } catch (e) {
+                        console.log('🔄 Fallback scroll method');
+                        // Method 2: Fallback for older browsers
+                        smoothScrollTo(targetPosition);
+                    }
+                    
+                    // Also update URL
+                    window.history.pushState(null, null, this.getAttribute('href'));
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                } else {
+                    console.warn('Target element not found:', targetId);
+                }
+            });
+        });
+        
+        console.log('✅ Navigation scroll handlers initialized');
+    }, 1000);
+}
+
+// Manual smooth scroll function for mobile compatibility
+function smoothScrollTo(targetPosition) {
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 800; // 800ms for smooth animation
+    let start = null;
+    
+    function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+    
+    // Easing function for smooth animation
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+    
+    requestAnimationFrame(animation);
 }
 
 // Check if DOM is already loaded or wait for it
@@ -394,6 +497,11 @@ function updateNavigationAndFooter() {
             });
             navMenu.innerHTML = navHTML;
             console.log('✅ Navigation menu updated:', navData.items);
+            
+            // Re-initialize scroll handlers after navigation update
+            setTimeout(() => {
+                initializeNavigationScrollHandlers();
+            }, 100);
         } else {
             console.error('❌ Navigation menu element not found');
         }
