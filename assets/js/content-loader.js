@@ -416,6 +416,91 @@ class ContentLoader {
             // Initialize background images for services (hover-based)
             setTimeout(() => {
                 console.log('🖼️ Triggering background images for services...');
+                
+                // Check if we're on mobile and apply background images immediately
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    console.log('📱 Mobile detected - applying service backgrounds immediately');
+                    
+                    // Function to apply mobile backgrounds
+                    const applyMobileBackgrounds = () => {
+                        console.log('🔍 Checking text data availability...');
+                        console.log('- textManager exists:', !!window.textManager);
+                        console.log('- textManager.isLoaded:', window.textManager?.isLoaded);
+                        console.log('- textManager.currentLanguage:', window.textManager?.currentLanguage);
+                        console.log('- textManager.texts exists:', !!window.textManager?.texts);
+                        
+                        if (window.textManager?.texts) {
+                            console.log('- Available text keys:', Object.keys(window.textManager.texts));
+                            console.log('- services exists:', !!window.textManager.texts.services);
+                            if (window.textManager.texts.services) {
+                                console.log('- services.items exists:', !!window.textManager.texts.services.items);
+                                console.log('- services.items length:', window.textManager.texts.services.items?.length);
+                                if (window.textManager.texts.services.items?.length > 0) {
+                                    console.log('- First service item keys:', Object.keys(window.textManager.texts.services.items[0]));
+                                    console.log('- First service item:', window.textManager.texts.services.items[0]);
+                                }
+                            }
+                        }
+                        
+                        const serviceCards = servicesContent.querySelectorAll('.service-card[data-service-index]');
+                        console.log('- Found service cards:', serviceCards.length);
+                        
+                        if (window.textManager && 
+                            window.textManager.texts && 
+                            window.textManager.texts.services && 
+                            window.textManager.texts.services.items &&
+                            serviceCards.length > 0) {
+                            
+                            console.log('✅ All conditions met, applying mobile backgrounds');
+                            const servicesData = window.textManager.texts.services.items;
+                            
+                            serviceCards.forEach((card, index) => {
+                                const serviceData = servicesData[index];
+                                console.log(`Card ${index}:`, {
+                                    hasServiceData: !!serviceData,
+                                    serviceDataKeys: serviceData ? Object.keys(serviceData) : [],
+                                    fullServiceData: serviceData,
+                                    backgroundImage: serviceData?.backgroundImage,
+                                    cardElement: card
+                                });
+                                
+                                if (serviceData && serviceData.backgroundImage) {
+                                    console.log(`🎨 Setting service background for mobile card ${index}: ${serviceData.backgroundImage}`);
+                                    
+                                    // Apply the same background styling as the hover state
+                                    card.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('${serviceData.backgroundImage}')`;
+                                    card.style.backgroundSize = 'cover';
+                                    card.style.backgroundPosition = 'center';
+                                    card.style.backgroundRepeat = 'no-repeat';
+                                    card.style.transition = 'all 0.3s ease';
+                                    card.style.color = 'white';
+                                    
+                                    // Add mobile hover class for additional styling
+                                    card.classList.add('mobile-hover');
+                                    
+                                    console.log(`✅ Applied background to card ${index}`);
+                                } else {
+                                    console.warn(`⚠️ No background image for card ${index}`);
+                                }
+                            });
+                        } else {
+                            console.warn('⚠️ Conditions not met for mobile backgrounds');
+                        }
+                    };
+                    
+                    // Try immediately
+                    applyMobileBackgrounds();
+                    
+                    // Also set up an event listener for when content is fully loaded
+                    document.addEventListener('contentLoaded', (event) => {
+                        if (event.detail.section === 'services') {
+                            console.log('🔄 Services content loaded event received, retrying mobile backgrounds');
+                            setTimeout(applyMobileBackgrounds, 100);
+                        }
+                    });
+                }
+                
                 document.dispatchEvent(new CustomEvent('contentLoaded', { detail: { section: 'services' } }));
             }, 200);
         } else {

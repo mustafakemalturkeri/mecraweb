@@ -1050,7 +1050,7 @@ body {
     border: none;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    background: var(--color-white) !important;
+    background: var(--color-white);
     display: block !important;
     margin-bottom: 2rem;
     position: relative !important;
@@ -1574,6 +1574,196 @@ body {
 
 .project-card:hover .project-overlay {
     opacity: 1;
+}
+
+/* Desktop service cards - keep white background */
+@media (min-width: 769px) {
+    .service-card {
+        background: var(--color-white) !important;
+    }
+}
+
+/* Mobile card display - show images immediately on touch devices */
+@media (max-width: 768px) {
+    /* Remove white background from all service cards on mobile */
+    .service-card[data-service-index] {
+        background-color: transparent !important;
+    }
+    
+    /* Mobile service cards with JavaScript-applied backgrounds */
+    .service-card.mobile-hover {
+        background-color: transparent !important;
+        color: white !important;
+    }
+    
+    /* Ensure pseudo-elements don't interfere on mobile */
+    .service-card[data-service-index]::after,
+    .service-card[data-service-index]::before,
+    .service-card.mobile-hover::after,
+    .service-card.mobile-hover::before {
+        display: none !important;
+    }
+    
+    /* Force all text to be white on mobile service cards */
+    .service-card h3,
+    .service-card p,
+    .service-card .card-title,
+    .service-card .card-text,
+    .service-card .service-title,
+    .service-card .service-description {
+        color: white !important;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.9) !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    .service-card .service-icon {
+        color: white !important;
+        filter: drop-shadow(1px 1px 3px rgba(0,0,0,0.9)) !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    .service-card .btn,
+    .service-card .service-details-btn {
+        background-color: rgba(255, 255, 255, 0.25) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        color: white !important;
+        backdrop-filter: blur(10px) !important;
+        text-shadow: none !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    /* Project cards - show overlay and scaled images immediately on mobile */
+    .project-overlay {
+        opacity: 1 !important;
+    }
+    
+    .project-image img {
+        transform: scale(1.1) !important;
+    }
+    
+    /* Project cards - show background images immediately on mobile */
+    .service-card[data-project-type="flagship"][data-project-index="0"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/flagship-1.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="flagship"][data-project-index="1"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/flagship-2.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="0"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-1.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="1"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-2.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="2"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-3.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="3"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-4.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="4"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-5.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="5"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-6.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="6"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-7.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="7"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-8.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="8"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-9.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
+
+    .service-card[data-project-type="reference"][data-project-index="9"] {
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+            url('../img/reference-10.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+    }
 }
 
 .project-info {
